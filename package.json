@@ -4,6 +4,9 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-image": "^2.7.5"
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-image": "^2.7.5",
+    "gulp-sass": "^3.1.0"
   }
 }
