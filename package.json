@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.9.1",
-    "gulp-image": "^2.7.5"
+    "gulp-image": "^2.7.5",
+    "gulp-pug": "^3.2.0"
   }
 }
