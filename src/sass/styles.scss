@@ -5,6 +5,12 @@
  * coded by leny@flatLand!
  * started at 09/02/2017
  */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 html {
     width: 100%;
@@ -29,7 +35,7 @@ main {
 }
 
 section {
-    min-height: 15rem;
+    min-height: 20rem;
     margin-bottom: 2rem;
     padding: 2rem;
     background: white;
@@ -105,18 +111,24 @@ footer {
 }
 
 @media screen and ( min-width: 640px ) {
+    body {
+        perspective: 50rem;
+    }
+
     main {
         position: relative;
         min-height: 20rem;
+        transition: transform .25s ease-in-out;
+        &.flipped {
+            transform-style: preserve-3d;
+            transform: rotateY( 180deg );
+        }
     }
 
     section {
         position: absolute;
         width: 100%;
         backface-visibility: hidden;
-        &.face {
-
-        }
         &.back {
             transform: rotateY( 180deg );
         }
