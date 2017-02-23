@@ -36,7 +36,9 @@ gulp.task( "css", function() {
 
 gulp.task( "html", function() {
     gulp.src( "src/pug/**/*.pug" )
-        .pipe( pug( {} ) )
+        .pipe( pug( {
+            "data": require( "./src/data.json" ),
+        } ) )
         .pipe( gulp.dest( "." ) );
 } );
 
