@@ -7,10 +7,154 @@
  */
 
 html {
-    background: yellow;
+    width: 100%;
+    height: 100%;
+    background: white url( ../images/main-bcg.png ) center repeat;
+    background-size: 104px auto;
+    font: normal 62.5%/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: black;
+}
 
-    body {
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 90%;
+    max-width: 30rem;
+}
+
+section {
+    min-height: 15rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 0 .5rem rgba( black, .25 );
+    &.face {
         display: flex;
-        color: purple;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: black url( ../images/card-bcg.jpg ) center no-repeat;
+        background-size: 125% auto;
+    }
+    &.back {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+}
+
+h1 {
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 100;
+    font-size: 2.4rem;
+    text-shadow: 0 0 .5rem black;
+    strong {
+        font-weight: 300;
+    }
+}
+
+p {
+    margin: 0 auto;
+    font-size: 1.6rem;
+    color: white;
+    text-shadow: 0 0 .5rem black;
+}
+
+h2 {
+    margin: 0 0 1rem;
+    font-size: 1.8rem;
+    font-weight: 200;
+}
+
+dl {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0;
+    dt {
+        width: 25.5%;
+        margin-bottom: 1rem;
+        margin-right: 2.5%;
+        font-size: 1rem;
+        color: #888;
+        text-align: right;
+    }
+    dd {
+        width: 70%;
+        margin: 0 0 1rem;
+        font-size: 1.2rem;
+        color: #333;
+    }
+}
+
+nav {
+    display: none;
+}
+
+footer {
+    font-size: 1.2rem;
+}
+
+@media screen and ( min-width: 640px ) {
+    main {
+        position: relative;
+        min-height: 20rem;
+    }
+
+    section {
+        position: absolute;
+        width: 100%;
+        backface-visibility: hidden;
+        &.face {
+
+        }
+        &.back {
+            transform: rotateY( 180deg );
+        }
+    }
+
+    nav {
+        display: block;
+        width: 90%;
+        max-width: 30rem;
+        margin: 1rem auto;
+        font-size: 1.4rem;
+        text-align: left;
+        a {
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+            color: purple;
+            text-decoration: none;
+            transition: color .125s ease-in-out;
+            svg {
+                height: 1.8rem;
+                margin-right: .5rem;
+                fill: purple;
+                transition: fill .125s ease-in-out, transform .25s ease-in-out;
+                path:nth-child(2) {
+                    transition: opacity .125s ease-in-out;
+                }
+            }
+            &:hover {
+                color: blue;
+                svg {
+                    fill: blue;
+                    transform: rotate( 180deg );
+                    path:nth-child(2) {
+                        opacity: 0;
+                    }
+                }
+            }
+        }
     }
 }
